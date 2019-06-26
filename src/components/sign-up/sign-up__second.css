@@ -1,0 +1,127 @@
+.sign-up__second .white-logo{
+  display: none;
+}
+
+.sign-up__second .white-card {
+  box-shadow: none;
+  position: relative;
+}
+
+.sign-up__second .blue-card {
+  position: relative;
+}
+
+.sign-up__second__labels__item {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  margin: 40px 0;
+}
+
+.sign-up__second__labels__item:nth-child(1)::before {
+  content: '';
+  width: 80px;
+  border-bottom: solid 2px #fff;
+  position: absolute;
+  left: 0;
+  top: 36.4%;
+  z-index: 1;
+}
+
+.sign-up__second__labels__item:nth-child(2)::before {
+  content: '';
+  width: 80px;
+  border-bottom: solid 2px #fff;
+  position: absolute;
+  left: 0;
+  top: 50.7%;
+  z-index: 1;
+}
+
+.sign-up__second__labels__item:nth-child(3)::before {
+  content: '';
+  width: 60px;
+  border-bottom: solid 2px #fff;
+  position: absolute;
+  left: 0;
+  top: 66.6%;
+  z-index: 1;
+}
+
+.birthday-input {
+  display: flex;
+  max-width: 378px;
+}
+
+.birthday-input .input-control {
+  margin-right: 5px;
+}
+
+.birthday-input .input {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  padding-bottom: 11px;
+}
+
+.sign-up__second .blue-card {
+  min-width: 320px;
+}
+
+.sign-up__second > .white-card > button:first-child {
+  left: 0;
+}
+
+.sign-up__second__labels__item:nth-child(1) {
+  margin-top: 55px;
+  margin-bottom: 40px;
+}
+
+.sign-up__second__labels__item:nth-child(2) {
+  margin-bottom: 53px;
+}
+
+.birthday-input .input-control:nth-child(3) {
+  margin-right: 0;
+}
+
+.date-validation {
+  color: red;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 320px) and (max-width: 995px) {
+  .sign-up__second__labels {
+    display: none;
+  }
+
+  .sign-up__second .blue-card {
+    border-radius: 0;
+  }
+
+  .sign-up__second {
+    height: 100%;
+    width: 100%;
+  }
+
+  .sign-up__second .white-card {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  div.white-card button:nth-child(7) {
+    left: 40px !important;
+  }
+
+  div.white-card button:nth-child(9) {
+    right: 40px !important;
+  }
+
+  .sign-up__second .white-logo{
+    display: block;
+  }
+}

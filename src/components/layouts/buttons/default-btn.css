@@ -1,0 +1,20 @@
+.default-btn {
+  background: linear-gradient(to right, #145BCC, #4F2BB2);
+  padding: 0 70px;
+  border: rgb(11, 42, 94);
+  min-height: 47px;
+  border-radius: 5px;
+  font-family: 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  box-shadow: 0 0 15px rgba(34, 100, 192, 0.658);
+  cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .default-btn {
+    padding: 0 55px;
+  }
+}

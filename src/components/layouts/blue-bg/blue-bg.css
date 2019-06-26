@@ -1,0 +1,20 @@
+.blue-bg {
+  background: linear-gradient(45deg, #0013A0, #000000);
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 995px) {
+  .blue-bg {
+    background: none;
+    width: 100%;
+  }
+
+  .blue-bg .row {
+    flex-direction: column-reverse;
+  }
+}

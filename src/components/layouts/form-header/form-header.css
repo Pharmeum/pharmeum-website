@@ -1,0 +1,9 @@
+.form-header {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

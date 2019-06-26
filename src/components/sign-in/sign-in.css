@@ -1,0 +1,51 @@
+.forgot-password__link {
+  font-family: 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  color: #AFACAC;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+}
+
+.remember-me {
+  font-family: 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  color: #AFACAC;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+}
+
+.remember-me__check {
+  margin-right: 10px;
+}
+
+.sign-in__suggestions {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sign-in__buttons {
+  display: flex;
+  margin-top: 38px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sign-in__buttons .default-btn, .white-btn {
+  width: auto;
+}
+
+@media (min-width: 320px) and (max-width: 995px) {
+  .container {
+    max-width: 100% !important;
+  }
+
+  .sign-in {
+    height: 100%;
+    width: 100%;
+  }
+
+  .sign-in__buttons {
+    margin-top: 60px;
+  }
+}

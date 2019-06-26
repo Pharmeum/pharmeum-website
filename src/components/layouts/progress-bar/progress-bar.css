@@ -1,0 +1,27 @@
+.progress-bar-custom {
+  display: flex;
+  position: absolute;
+  bottom: 63px;
+  left: 43%;
+}
+
+.progress-bar__item {
+  display: block;
+  height: 10px;
+  width: 10px;
+  margin: 6px;
+  background-color: #CDCDCD;
+  border-radius: 100%;
+}
+
+.blue {
+  background-color: #145ACC;
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .progress-bar-custom {
+    position: unset;
+    margin-top: 55px;
+    justify-content: center;
+  }
+}

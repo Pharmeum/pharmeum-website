@@ -1,0 +1,35 @@
+.input {
+  color: #145ACC;
+  font-family: 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #CDCDCD;
+  outline: none;
+  width: 378px;
+  padding: 0px 0px 11px 60px;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #CDCDCD;
+}
+
+.input-blue > .input {
+  border-bottom: 1px solid #145ACC;
+}
+
+.input-blue > .input-icon {
+  color: #145ACC;
+}
+
+.input-control {
+  margin-top: 40px;
+  position: relative;
+}
+
+.input-icon {
+  color: #CDCDCD;
+  display: block;
+  position: absolute;
+  left: 15px;
+}

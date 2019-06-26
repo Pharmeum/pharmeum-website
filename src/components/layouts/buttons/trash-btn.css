@@ -1,0 +1,11 @@
+.trash-btn {
+  background: linear-gradient(to right, #145BCC, #4F2BB2);
+  padding: 10px 15px;
+  border: 1px solid rgb(16, 72, 161);
+  border-radius: 5px;
+  outline: none;
+}
+
+.trash-icon {
+  color: #fff;
+}

@@ -1,0 +1,22 @@
+.white-btn {
+  background: #fff;
+  padding: 0 50px;
+  border: none;
+  height: 47px;
+  border-radius: 5px;
+  font-family: 'Ubuntu', 'Roboto', 'Arial', sans-serif;
+  font-weight: 500;
+  color: #145ACC;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .white-btn {
+    width: auto;
+    padding: 0 35px;
+    margin-left: 10px;
+  }
+}
