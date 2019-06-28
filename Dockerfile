@@ -18,6 +18,8 @@ COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 
 ADD .stack/default.conf /etc/nginx/conf.d/default.conf
 
+ENV BACKEND_API_HOST "0.0.0.0:300"
+RUN sed -i -e "s,BACKEND_API_HOST,$BACKEND_API_HOST,g" /usr/share/nginx/html/static/js/main*
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
