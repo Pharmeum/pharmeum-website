@@ -13,6 +13,7 @@
     "js-cookie": "^2.2.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.1",
+    "react-accessible-accordion": "^3.0.0",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.1",
     "react-notifications-component": "^1.1.1",

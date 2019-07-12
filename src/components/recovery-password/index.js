@@ -137,7 +137,6 @@ export default class RecoveryPassword extends Component {
             );
             return
         }
-        console.log(token);
         usersClient.put("/user/new_password",
             {token: token, password: this.state.password})
             .then(res => {
