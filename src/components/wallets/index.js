@@ -34,13 +34,18 @@ export default class Wallets extends Component {
         showWalletsLoadingAlert(this.notificationDOMRef);
         this.getWallet()
             .then(res => this.updateState(res))
-            .catch(error =>
+            .catch(error => {
+                if (error.response.status === 401) {
+                    this.props.history.push('/login');
+                    return
+                }
+
                 showErrorAlert(
                     this.notificationDOMRef,
                     error.response.data.error,
                     error.response.status
                 )
-            );
+            });
     }
 
     getWallet() {
@@ -60,33 +65,7 @@ export default class Wallets extends Component {
         return false;
     }
 
-    createTransaction(transaction) {
-        showTransactionPendingAlert(this.notificationDOMRef);
-        paymentClient
-            .post("/user/payment", {
-                sender_address: transaction.from,
-                receiver: transaction.to,
-                amount: +transaction.amount
-            })
-            .then(() => this.getWallet())
-            .then(res => this.updateState(res))
-            .then(() => showTransactionSuccessAlert(this.notificationDOMRef))
-            .catch(error =>
-                showErrorAlert(
-                    this.notificationDOMRef,
-                    error.response.data.error,
-                    error.response.status
-                )
-            );
-    }
-
     onHandleClick = (e, state) => {
-        if (state) {
-            if (state.from && state.to && state.amount) {
-                this.createTransaction(state);
-            }
-        }
-
         this.setState({
             openPopup: !this.state.openPopup
         });
