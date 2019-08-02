@@ -11,6 +11,7 @@ import DefaultBtn from '../layouts/buttons/DefaultBtn';
 
 import './forgot-password-verify.css';
 import ReactNotification from "react-notifications-component"
+import {showErrorAlert} from "../../alerts";
 
 export default class InfoForgotPassword extends Component {
     constructor(props) {
@@ -30,7 +31,22 @@ export default class InfoForgotPassword extends Component {
         if (this.state.email !== '') {
             usersClient.post('/user/reset_password', {
                 email: this.state.email,
-            }).catch(e => console.log(e));
+            }).catch(error => {
+                if (error.message === "Network Error") {
+                    showErrorAlert(
+                        this.notificationDOMRef,
+                        error.message,
+                        500
+                    );
+                    return
+                }
+
+                showErrorAlert(
+                    this.notificationDOMRef,
+                    error.response.data.error,
+                    error.response.status
+                );
+            });
         } else {
             this.props.history.push('/forgot-password');
         }

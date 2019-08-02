@@ -103,6 +103,14 @@ export default class SecondPage extends Component {
                     if (res) this.props.history.push("/sign-up/finish");
                 })
                 .catch(error => {
+                    if (error.message === "Network Error") {
+                        showErrorAlert(
+                            this.notificationDOMRef,
+                            error.message,
+                            500
+                        );
+                        return
+                    }
                     showErrorAlert(
                         this.notificationDOMRef,
                         error.response.data.error,

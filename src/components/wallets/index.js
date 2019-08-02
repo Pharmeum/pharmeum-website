@@ -79,12 +79,21 @@ export default class Wallets extends Component {
             .then(() => this.getWallet())
             .then(res => this.updateState(res))
             .then(() => showWalletSuccessAlert(this.notificationDOMRef))
-            .catch(error =>
-                showErrorAlert(
-                    this.notificationDOMRef,
-                    error.response.data.error,
-                    error.response.status
-                )
+            .catch(error => {
+                    if (error.message === "Network Error") {
+                        showErrorAlert(
+                            this.notificationDOMRef,
+                            error.message,
+                            500
+                        );
+                        return
+                    }
+                    showErrorAlert(
+                        this.notificationDOMRef,
+                        error.response.data.error,
+                        error.response.status
+                    )
+                }
             );
     };
 

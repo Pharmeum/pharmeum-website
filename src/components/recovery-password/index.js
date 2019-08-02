@@ -143,6 +143,14 @@ export default class RecoveryPassword extends Component {
                 return this.props.history.push("/sign-in")
             })
             .catch(error => {
+                if (error.message === "Network Error") {
+                    showErrorAlert(
+                        this.notificationDOMRef,
+                        error.message,
+                        500
+                    );
+                    return
+                }
                 showErrorAlert(
                     this.notificationDOMRef,
                     error.response.data.error,

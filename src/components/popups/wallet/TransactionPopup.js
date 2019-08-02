@@ -60,6 +60,15 @@ export default class TransactionPopup extends Component {
         }).then(res => {
             showTransactionSuccessAlert(this.notificationDOMRef)
         }).catch(error => {
+            if (error.message === "Network Error") {
+                showErrorAlert(
+                    this.notificationDOMRef,
+                    error.message,
+                    500
+                );
+                return
+            }
+
             showErrorAlert(
                 this.notificationDOMRef,
                 error.response.data.error,

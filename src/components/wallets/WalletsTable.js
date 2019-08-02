@@ -31,6 +31,15 @@ export default class WalletsTable extends Component {
                 this.setState({balance: res.data.balance})
             })
             .catch(error => {
+                if (error.message === "Network Error") {
+                    showErrorAlert(
+                        this.notificationDOMRef,
+                        error.message,
+                        500
+                    );
+                    return
+                }
+
                 this.setState({balance: "failed to get wallet balance, please try again later"});
                 showErrorAlert(
                     this.notificationDOMRef,

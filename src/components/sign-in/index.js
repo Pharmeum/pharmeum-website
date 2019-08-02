@@ -36,7 +36,6 @@ export default class SignIn extends Component {
             }, {rejectUnauthorized: false})
             .then(res => {
                 if (res) {
-                    console.log(res);
                     if (res.data) {
                         if (res.data.token) {
                             Cookies.set("Authorization", `Bearer ${res.data.token}`);
@@ -46,6 +45,14 @@ export default class SignIn extends Component {
                 }
             })
             .catch(error => {
+                if (error.message === "Network Error") {
+                    showErrorAlert(
+                        this.notificationDOMRef,
+                        error.message,
+                        500
+                    );
+                    return
+                }
                 showErrorAlert(
                     this.notificationDOMRef,
                     error.response.data.error,
